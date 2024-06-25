@@ -37,7 +37,7 @@ final class ListingRepoTests: XCTestCase {
     
     func testWhenServiceRequestSucceed_and_noCache_should_returnSuccessMessage() throws {
         // When
-        service.expect(.success(Listings()))
+        service.expect(.success(ListingDTO()))
         let expectation = expectation(description: "service expectation")
 
         // Given

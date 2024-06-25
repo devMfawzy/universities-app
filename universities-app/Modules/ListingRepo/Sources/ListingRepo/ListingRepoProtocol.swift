@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol ListingRepoProtocol: AnyObject {
-    func getListings(completion: @escaping (Result<Listings, Error>) -> Void)
+    func getListings(completion: @escaping (Result<ListingDTO, Error>) -> Void)
 }

@@ -15,7 +15,7 @@ final public class ListingService: ListingServiceProtocol {
         self.session = URLSession.shared
     }
 
-    public func fetchListings(completion: @escaping (Result<Listings, ListingFetchError>) -> Void) {
+    public func fetchListings(completion: @escaping (Result<ListingDTO, ListingFetchError>) -> Void) {
         guard let request = listingRequest else {
             completion(.failure(.invalidURLError))
             return
@@ -25,7 +25,7 @@ final public class ListingService: ListingServiceProtocol {
             case let .success(data):
                 let decode = JSONDecoder()
                 do {
-                    let listing = try decode.decode(Listings.self, from: data)
+                    let listing = try decode.decode(ListingDTO.self, from: data)
                     completion(.success(listing))
                 } catch {
                     completion(.failure(.decodingError))

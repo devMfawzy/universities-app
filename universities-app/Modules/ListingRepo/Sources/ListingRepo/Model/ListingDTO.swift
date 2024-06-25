@@ -7,9 +7,9 @@
 
 import Foundation
 
-public typealias Listings = [ListingRecord]
+public typealias ListingDTO = [ListingRecordDTO]
 
-public struct ListingRecord: Decodable, Equatable {
+public struct ListingRecordDTO: Decodable, Equatable {
     public let name: String
     public let country: String
     public let code: String

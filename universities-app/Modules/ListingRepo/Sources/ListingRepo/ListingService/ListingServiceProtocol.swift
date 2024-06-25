@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol ListingServiceProtocol {
-    func fetchListings(completion: @escaping (Result<Listings, ListingFetchError>) -> Void)
+    func fetchListings(completion: @escaping (Result<ListingDTO, ListingFetchError>) -> Void)
 }

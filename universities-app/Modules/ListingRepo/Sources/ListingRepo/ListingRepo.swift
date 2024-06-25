@@ -10,11 +10,11 @@ import Foundation
 final public class ListingRepo: ListingRepoProtocol {
     private let service: ListingServiceProtocol
 
-    public init(service: ListingServiceProtocol) {
+    public init(service: ListingServiceProtocol = ListingService()) {
         self.service = service
     }
     
-    public func getListings(completion: @escaping (Result<Listings, Error>) -> Void) {
+    public func getListings(completion: @escaping (Result<ListingDTO, Error>) -> Void) {
         service.fetchListings { result in
             switch result {
             case .success(let items):

@@ -8,15 +8,15 @@ import Foundation
 @testable import ListingRepo
 
 final class MockListingService: ListingServiceProtocol {
-    private var expectedResult: Result<Listings, ListingFetchError>?
+    private var expectedResult: Result<ListingDTO, ListingFetchError>?
     
-    func fetchListings(completion: @escaping (Result<Listings, ListingFetchError>) -> Void) {
+    func fetchListings(completion: @escaping (Result<ListingDTO, ListingFetchError>) -> Void) {
         if let expectedResult {
             completion(expectedResult)
         }
     }
     
-    func expect(_ result: Result<Listings, ListingFetchError>) {
+    func expect(_ result: Result<ListingDTO, ListingFetchError>) {
         expectedResult = result
     }
 }
