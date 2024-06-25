@@ -1,5 +1,5 @@
 #  Universities APP
-Universities APP iOS assessment app. 
+Universities APP is an iOS assessment app. 
 
 ## Features
 1. The app consists of master and details screens.
@@ -24,7 +24,7 @@ The app follows the `VIPER` Architecture.
 - `RealmSwift` DB for persisting loaded data.
 
 ## Testing
-- Added unit tests for critical parts in the app like data loading form network and cache
+Added unit tests for critical parts in the app like data loading form network and cache
 
 
 
