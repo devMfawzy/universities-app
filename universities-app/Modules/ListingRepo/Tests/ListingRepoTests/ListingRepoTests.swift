@@ -16,6 +16,7 @@ final class ListingRepoTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
         service = nil
+        database = nil
         repo = nil
     }
     
@@ -61,6 +62,62 @@ final class ListingRepoTests: XCTestCase {
         // Then
         XCTAssertFalse(database.items.isEmpty)
         XCTAssertEqual(database.items.map { ListingItemDTO(object: $0) }, objects)
+    }
+    
+    func test_getListings_whenCacheContainsData_andAPIRequestFails_repositortShould_resturnCachedData() throws {
+        // Given
+        let cache = mockDAOs(count: 10)
+        database.add(objects: cache) // simulate data cache exists
+        service.expect(.failure(.unknownError)) // simulate API request fails
+        let expectation = expectation(description: "load data expectation")
+        let expected = cache.map { ListingItemDTO(object: $0) }
+        var dataResult: ListingDTOs?
+
+        // When
+        repo.getListings { result in
+            switch result {
+            case .success(let listings):
+                dataResult = listings
+            default:
+                fatalError("should succeed")
+            }
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1)
+
+        //Then
+        XCTAssertFalse(database.items.isEmpty)
+        XCTAssertEqual(database.items, cache)
+        XCTAssertEqual(dataResult, expected)
+    }
+    
+    func test_getListings_whenCacheContainsData_andAPIRequestSucceed_repositortShould_returnDataLoadedFromAPI_andCacheIt() throws {
+        // Given
+        let cache = mockDAOs(count: 10)
+        let apiResponseData = mockDTOs(count: 5) // different data loaded form network
+        database.add(objects: cache) // simulate data cache exists
+        service.expect(.success(apiResponseData)) // simulate API request succeed
+        let expectation = expectation(description: "load data expectation")
+        var dataResult: ListingDTOs?
+
+        // When
+        repo.getListings { result in
+            switch result {
+            case .success(let listings):
+                dataResult = listings
+            default:
+                fatalError("should succeed")
+            }
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1)
+
+        //Then
+        XCTAssertFalse(database.items.isEmpty)
+        XCTAssertEqual(database.items.count, dataResult?.count)
+        XCTAssertNotEqual(database.items, cache)
+        let newCachedDTOs = database.items.map { ListingItemDTO(object: $0) }
+        XCTAssertEqual(newCachedDTOs, apiResponseData)
     }
 }
 
