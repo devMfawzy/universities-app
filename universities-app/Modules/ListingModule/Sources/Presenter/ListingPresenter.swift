@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DetailsModule
 
 final class ListingPresenter {
     private weak var view: ListingViewProtocol?
@@ -30,7 +31,7 @@ extension ListingPresenter: ListingPresenterProtocol  {
     
     func viewDidLoad(view: any ListingViewProtocol) {
         self.view = view
-        loadListins()
+        loadListings()
     }
     
     func listingItem(at indexPath: IndexPath) -> ListingItem? {
@@ -44,13 +45,13 @@ extension ListingPresenter: ListingPresenterProtocol  {
     }
     
     func didTapRetryButton() {
-        loadListins()
+        loadListings()
     }
 
-    private func loadListins() {
+    private func loadListings() {
         view?.hideFailureMessage()
         view?.startLoadig()
-        self.interactor.loadListins()
+        self.interactor.loadListings()
     }
 }
 
@@ -70,6 +71,6 @@ extension ListingPresenter: ListingInteractorOutputProtocol {
 
 extension ListingPresenter: DetailToListingProtocol {
     func didRequestRefresh() {
-        loadListins()
+        loadListings()
     }
 }

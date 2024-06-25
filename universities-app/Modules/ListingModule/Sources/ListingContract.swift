@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import ListingRepo
+import DetailsModule
 
 //MARK: - Contract agreement between module layers
 
@@ -28,7 +28,7 @@ protocol ListingPresenterProtocol: AnyObject {
 }
 
 protocol ListingInteractorInputProtocol: AnyObject {
-    func loadListins()
+    func loadListings()
 }
 
 protocol ListingInteractorOutputProtocol: AnyObject {
@@ -38,8 +38,4 @@ protocol ListingInteractorOutputProtocol: AnyObject {
 
 protocol ListingRouterProtocol: AnyObject {
     func pushDetailsView(item: Listing, delegate: DetailToListingProtocol)
-}
-
-protocol DetailToListingProtocol: AnyObject {
-    func didRequestRefresh()
 }

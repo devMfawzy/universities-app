@@ -16,7 +16,7 @@ final class ListingInteractor: ListingInteractorInputProtocol {
         self.repo = repo
     }
     
-    func loadListins() {
+    func loadListings() {
         repo.getListings { result in
             switch result {
             case .success(let dto):
