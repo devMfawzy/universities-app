@@ -19,7 +19,7 @@ struct Listing {
 }
 
 extension Listing {
-    init(_ dto: ListingRecordDTO) {
+    init(_ dto: ListingItemDTO) {
         self.name = dto.name
         self.country = dto.country
         self.code = dto.code
@@ -29,7 +29,7 @@ extension Listing {
 }
 
 extension Listings {
-    static func from(_ dto: ListingDTO) -> Listings {
+    static func from(_ dto: ListingDTOs) -> Listings {
         dto.map { Listing($0)}
     }
 }

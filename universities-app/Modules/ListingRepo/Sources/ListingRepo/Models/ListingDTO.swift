@@ -7,9 +7,9 @@
 
 import Foundation
 
-public typealias ListingDTO = [ListingRecordDTO]
+public typealias ListingDTOs = [ListingItemDTO]
 
-public struct ListingRecordDTO: Decodable, Equatable {
+public struct ListingItemDTO: Decodable, Equatable {
     public let name: String
     public let country: String
     public let code: String
@@ -22,5 +22,15 @@ public struct ListingRecordDTO: Decodable, Equatable {
         case code = "alpha_two_code"
         case webPages = "web_pages"
         case state = "state-province"
+    }
+}
+
+extension ListingItemDTO {
+    init(object: ListingItemDAO) {
+        self.name = object.name
+        self.country = object.countryName
+        self.code = object.countryCode
+        self.webPages = object.webPages.map { $0 }
+        self.state = object.state
     }
 }
