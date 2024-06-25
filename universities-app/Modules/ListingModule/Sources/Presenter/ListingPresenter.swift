@@ -11,7 +11,7 @@ final class ListingPresenter {
     private weak var view: ListingViewProtocol?
     private let router: ListingRouterProtocol
     private let interactor: ListingInteractorInputProtocol
-    private(set) var listingItems = [ListingItemDetail]()
+    private(set) var listingItems = Listings()
     
     init(router: ListingRouterProtocol, interactor: ListingInteractorInputProtocol) {
         self.router = router
@@ -55,7 +55,7 @@ extension ListingPresenter: ListingPresenterProtocol  {
 }
 
 extension ListingPresenter: ListingInteractorOutputProtocol {
-    func loadListingSuccess(resutlt: [ListingItemDetail]) {
+    func loadListingSuccess(resutlt: Listings) {
         view?.stopLoadig()
         listingItems.removeAll()
         listingItems.append(contentsOf: resutlt)

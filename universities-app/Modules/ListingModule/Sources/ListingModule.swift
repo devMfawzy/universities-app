@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import ListingRepo
 
 public enum ListingModule {
     public static func createModule() -> UIViewController {
         let router = ListingRouter()
-        let repo = ListingRepo(service: ListingService())
+        let repo = ListingRepo()
         let interactor = ListingInteractor(repo: repo)
         let presenter = ListingPresenter(router: router, interactor: interactor)
         let view = ListingView(presenter: presenter)

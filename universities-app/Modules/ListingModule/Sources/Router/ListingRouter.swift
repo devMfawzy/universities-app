@@ -6,13 +6,11 @@
 //
 
 import UIKit
+import ListingRepo
 
 final class ListingRouter: ListingRouterProtocol {
     weak var view: UIViewController?
     
-    func pushDetailsView(item: ListingItemDetail, delegate: DetailToListingProtocol) {
-        let detailsView = DetailsModule.createModule(item: item, delegate: delegate)
-        guard let viewController = detailsView as? UIViewController else { return }
-        view?.navigationController?.pushViewController(viewController, animated: true)
+    func pushDetailsView(item: Listing, delegate: DetailToListingProtocol) {
     }
 }

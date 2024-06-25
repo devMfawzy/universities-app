@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ListingRepo
 
 struct ListingItem {
     let name: String
@@ -13,7 +14,7 @@ struct ListingItem {
 }
 
 extension ListingItem {
-    init(item: ListingItemDetail) {
+    init(item: Listing) {
         self.name = item.name
         self.state = item.state
     }

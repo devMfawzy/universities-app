@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ListingRepo
 
 //MARK: - Contract agreement between module layers
 
@@ -31,16 +32,12 @@ protocol ListingInteractorInputProtocol: AnyObject {
 }
 
 protocol ListingInteractorOutputProtocol: AnyObject {
-    func loadListingSuccess(resutlt: [ListingItemDetail])
+    func loadListingSuccess(resutlt: Listings)
     func loadListingFailure(message: String)
 }
 
 protocol ListingRouterProtocol: AnyObject {
-    func pushDetailsView(item: ListingItemDetail, delegate: DetailToListingProtocol)
-}
-
-protocol ListingRepoProtocol: AnyObject {
-    func getListings(completion: @escaping (Result<[ListingItemDetail], any Error>) -> Void)
+    func pushDetailsView(item: Listing, delegate: DetailToListingProtocol)
 }
 
 protocol DetailToListingProtocol: AnyObject {

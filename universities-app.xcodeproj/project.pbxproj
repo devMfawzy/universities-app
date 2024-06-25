@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B7C73BD2C29A3820025229A /* ListingModule in Frameworks */ = {isa = PBXBuildFile; productRef = 5B7C73BC2C29A3820025229A /* ListingModule */; };
-		5B7C73C02C29AEA50025229A /* ListingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C73BF2C29AEA50025229A /* ListingServiceProtocol.swift */; };
-		5B7C73C22C29AEE60025229A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C73C12C29AEE60025229A /* Constants.swift */; };
-		5B7C73C42C29AEF90025229A /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C73C32C29AEF90025229A /* ListingService.swift */; };
-		5B7C73C62C29AF9D0025229A /* APIResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C73C52C29AF9D0025229A /* APIResponseItem.swift */; };
+		5B7C73D22C29C49D0025229A /* ListingRepo in Frameworks */ = {isa = PBXBuildFile; productRef = 5B7C73D12C29C49D0025229A /* ListingRepo */; };
+		5B7C73D52C2A19B60025229A /* ListingModule in Frameworks */ = {isa = PBXBuildFile; productRef = 5B7C73D42C2A19B60025229A /* ListingModule */; };
 		5B9FB14F2C2992B700404F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FB14E2C2992B700404F65 /* AppDelegate.swift */; };
 		5B9FB1512C2992B700404F65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FB1502C2992B700404F65 /* SceneDelegate.swift */; };
 		5B9FB1582C2992BA00404F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9FB1572C2992BA00404F65 /* Assets.xcassets */; };
@@ -19,10 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B7C73BF2C29AEA50025229A /* ListingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingServiceProtocol.swift; sourceTree = "<group>"; };
-		5B7C73C12C29AEE60025229A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		5B7C73C32C29AEF90025229A /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
-		5B7C73C52C29AF9D0025229A /* APIResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseItem.swift; sourceTree = "<group>"; };
 		5B9FB14B2C2992B700404F65 /* universities-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "universities-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9FB14E2C2992B700404F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B9FB1502C2992B700404F65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,24 +29,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7C73BD2C29A3820025229A /* ListingModule in Frameworks */,
+				5B7C73D22C29C49D0025229A /* ListingRepo in Frameworks */,
+				5B7C73D52C2A19B60025229A /* ListingModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B7C73BE2C29AE800025229A /* ListingService */ = {
-			isa = PBXGroup;
-			children = (
-				5B7C73BF2C29AEA50025229A /* ListingServiceProtocol.swift */,
-				5B7C73C12C29AEE60025229A /* Constants.swift */,
-				5B7C73C32C29AEF90025229A /* ListingService.swift */,
-				5B7C73C52C29AF9D0025229A /* APIResponseItem.swift */,
-			);
-			path = ListingService;
-			sourceTree = "<group>";
-		};
 		5B9FB1422C2992B700404F65 = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +56,6 @@
 		5B9FB14D2C2992B700404F65 /* universities-app */ = {
 			isa = PBXGroup;
 			children = (
-				5B7C73BE2C29AE800025229A /* ListingService */,
 				5B9FB14E2C2992B700404F65 /* AppDelegate.swift */,
 				5B9FB1502C2992B700404F65 /* SceneDelegate.swift */,
 				5B9FB1572C2992BA00404F65 /* Assets.xcassets */,
@@ -100,7 +82,8 @@
 			);
 			name = "universities-app";
 			packageProductDependencies = (
-				5B7C73BC2C29A3820025229A /* ListingModule */,
+				5B7C73D12C29C49D0025229A /* ListingRepo */,
+				5B7C73D42C2A19B60025229A /* ListingModule */,
 			);
 			productName = "universities-app";
 			productReference = 5B9FB14B2C2992B700404F65 /* universities-app.app */;
@@ -131,7 +114,8 @@
 			);
 			mainGroup = 5B9FB1422C2992B700404F65;
 			packageReferences = (
-				5B7C73BB2C29A3820025229A /* XCLocalSwiftPackageReference "universities-app/Modules/ListingModule" */,
+				5B7C73D02C29C49D0025229A /* XCLocalSwiftPackageReference "universities-app/Modules/ListingRepo" */,
+				5B7C73D32C2A19B60025229A /* XCLocalSwiftPackageReference "universities-app/Modules/ListingModule" */,
 			);
 			productRefGroup = 5B9FB14C2C2992B700404F65 /* Products */;
 			projectDirPath = "";
@@ -159,12 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7C73C42C29AEF90025229A /* ListingService.swift in Sources */,
 				5B9FB14F2C2992B700404F65 /* AppDelegate.swift in Sources */,
-				5B7C73C62C29AF9D0025229A /* APIResponseItem.swift in Sources */,
 				5B9FB1512C2992B700404F65 /* SceneDelegate.swift in Sources */,
-				5B7C73C02C29AEA50025229A /* ListingServiceProtocol.swift in Sources */,
-				5B7C73C22C29AEE60025229A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +291,7 @@
 				DEVELOPMENT_TEAM = F7RWFZ45WK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "universities-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Univerties App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -341,6 +322,7 @@
 				DEVELOPMENT_TEAM = F7RWFZ45WK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "universities-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Univerties App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -385,14 +367,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		5B7C73BB2C29A3820025229A /* XCLocalSwiftPackageReference "universities-app/Modules/ListingModule" */ = {
+		5B7C73D02C29C49D0025229A /* XCLocalSwiftPackageReference "universities-app/Modules/ListingRepo" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "universities-app/Modules/ListingRepo";
+		};
+		5B7C73D32C2A19B60025229A /* XCLocalSwiftPackageReference "universities-app/Modules/ListingModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "universities-app/Modules/ListingModule";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B7C73BC2C29A3820025229A /* ListingModule */ = {
+		5B7C73D12C29C49D0025229A /* ListingRepo */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ListingRepo;
+		};
+		5B7C73D42C2A19B60025229A /* ListingModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ListingModule;
 		};

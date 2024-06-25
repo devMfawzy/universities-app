@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import ListingRepo
 
 final class ListingInteractor: ListingInteractorInputProtocol {
     weak var output: ListingInteractorOutputProtocol?
-    
     private let repo: ListingRepoProtocol
     
     init(repo: ListingRepoProtocol) {
@@ -19,8 +19,8 @@ final class ListingInteractor: ListingInteractorInputProtocol {
     func loadListins() {
         repo.getListings { result in
             switch result {
-            case .success(let listing):
-                self.output?.loadListingSuccess(resutlt: listing)
+            case .success(let dto):
+                self.output?.loadListingSuccess(resutlt: Listings.from(dto))
             case .failure(let error):
                 self.output?.loadListingFailure(message: error.localizedDescription)
             }

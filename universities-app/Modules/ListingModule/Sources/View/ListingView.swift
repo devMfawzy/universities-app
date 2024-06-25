@@ -5,14 +5,14 @@
 //  Created by Mohamed Fawzy on 24/06/2024.
 //
 
-import Foundation
+import UIKit
 
 final class ListingView: UIViewController {
     private let presenter: ListingPresenterProtocol
     
     //MARK: - Subviews
     private let tableView = UITableView(frame: .zero)
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
+    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
     private lazy var failureView =  FailureView(buttonTitle: "Retry") { [weak self] in        self?.presenter.didTapRetryButton()
     }
     
